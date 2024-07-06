@@ -5,6 +5,12 @@
         "rootDir": "./",
         "baseUrl": ".",
         "resolveJsonModule": true,
+        "paths": {
+            "@/*": ["./*"],
+            "@infra/*": ["./src/infra/*"],
+            "@main/*": ["./src/main/*"],
+            "@presentation/*": ["./src/presentation/*"]
+        },
         "outDir": "./dist",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
