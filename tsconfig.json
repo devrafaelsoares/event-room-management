@@ -9,6 +9,8 @@
             "@/*": ["./*"],
             "@infra/*": ["./src/infra/*"],
             "@main/*": ["./src/main/*"],
+            "@helpers/*": ["./src/helpers/*"],
+            "@helpers": ["./src/helpers/index"],
             "@presentation/*": ["./src/presentation/*"]
         },
         "outDir": "./dist",
