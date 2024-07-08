@@ -1,0 +1,5 @@
+export enum UserRole {
+    ADMIN = 'ADMINISTRADOR',
+    PARTICIPANT = 'PARTICIPANTE',
+    ORGANIZER = 'ORGANIZADOR',
+}
