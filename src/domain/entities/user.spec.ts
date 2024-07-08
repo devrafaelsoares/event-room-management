@@ -1,14 +1,12 @@
-import { User, UserProps } from './user';
+import { User, UserPropsCreate } from './user';
 import { UserRole } from './user-role';
 
 describe('User', () => {
     it('should be able to create a user', () => {
-        const userProps = {
+        const userProps: UserPropsCreate = {
             email: 'anyon@eemail.com',
             name: 'Anyone',
-            createdAt: new Date(),
             role: UserRole.PARTICIPANT,
-            updatedAt: new Date(),
         };
 
         const userResult = User.create(userProps);
@@ -18,12 +16,10 @@ describe('User', () => {
     });
 
     it('should not be possible to create a user', () => {
-        const userProps: UserProps = {
+        const userProps: UserPropsCreate = {
             email: '',
             name: 'Anyone',
-            createdAt: new Date(),
             role: UserRole.ADMIN,
-            updatedAt: new Date(),
         };
         const userResult = User.create(userProps);
 
