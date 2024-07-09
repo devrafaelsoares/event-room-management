@@ -9,6 +9,7 @@
             "@/*": ["./*"],
             "@infra/*": ["./src/infra/*"],
             "@main/*": ["./src/main/*"],
+            "@domain/*": ["./src/domain/*"],
             "@helpers/*": ["./src/helpers/*"],
             "@helpers": ["./src/helpers/index"],
             "@presentation/*": ["./src/presentation/*"]
