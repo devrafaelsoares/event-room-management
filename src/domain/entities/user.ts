@@ -1,6 +1,8 @@
-import { Replace } from '@helpers';
+import { Replace } from '@helpers/replace';
 import { UserRole } from './user-role';
 import { randomUUID } from 'crypto';
+import { Either, error, success } from '@helpers/either';
+import { ValidationError, Validator } from '@domain/validators/protocols';
 
 export type UserProps = {
     name: string;
@@ -25,8 +27,17 @@ export class User implements UserProps {
         };
     }
 
-    public static create(props: UserPropsCreate): User {
-        return new User(props);
+    public static create(
+        props: UserPropsCreate,
+        validator: Validator<UserPropsCreate>
+    ): Either<ValidationError<UserPropsCreate>[], User> {
+        const validationErrors: ValidationError<UserPropsCreate>[] = validator.validate(props);
+
+        if (validationErrors.length > 0) {
+            return error(validationErrors);
+        }
+
+        return success(new User(props));
     }
 
     get id(): string {
