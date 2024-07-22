@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
 import { Replace } from '@helpers/replace';
 import { Either, error, success } from '@helpers/either';
-import { ValidationError, Validator } from '@/domain/validators/protocols';
+import { ValidationError, Validator } from '@domain/validators/protocols';
 
 export type RoomProps = {
     name: string;
